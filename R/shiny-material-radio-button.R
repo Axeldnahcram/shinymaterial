@@ -50,9 +50,6 @@ material_radio_button <- function(input_id, label, choices, selected = NULL, col
   
   has_names <- !is.null(names(choices))
   choices[choices == ""] <- "_shinymaterialradioempty_"
-  selected <- if (is.null(selected)) choices[[1]] else as.character(selected)
-  if (length(selected) > 1) stop("The 'selected' argument must be of length 1")
-  if (! selected %in% choices) stop("The 'selected' argument must be in choices")
   
   for(i in 1:length(choices)){
     material_radio_choices[[i]] <-
